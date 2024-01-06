@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqdv8asbnlut5"]
+
+[ext_resource type="PackedScene" uid="uid://nje8o2jtrp88" path="res://main_menu.tscn" id="1_dhcnq"]
+[ext_resource type="Texture2D" uid="uid://y104bmulgi7u" path="res://icon.svg" id="2_xkqjj"]
+[ext_resource type="AudioStream" uid="uid://cm1nuljghch1" path="res://Clement Panchout _ Jelly Blob _ 2017.wav" id="3_10bo1"]
+[ext_resource type="Texture2D" uid="uid://d4lix5vb5xnci" path="res://Assets/bg.jpg" id="4_1pa0o"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MainMenu" parent="CanvasLayer" instance=ExtResource("1_dhcnq")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(115, -136)
+texture = ExtResource("2_xkqjj")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_10bo1")
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(573, 329)
+scale = Vector2(1.85942, 1.54225)
+texture = ExtResource("4_1pa0o")

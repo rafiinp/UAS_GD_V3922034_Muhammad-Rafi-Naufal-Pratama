@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://fev1noblej5b"]
+
+[ext_resource type="Script" path="res://game_over.gd" id="1_r631n"]
+[ext_resource type="Texture2D" uid="uid://d4lix5vb5xnci" path="res://Assets/bg.jpg" id="2_grqu1"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_r631n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(159, 86.9996)
+scale = Vector2(0.523962, 0.441316)
+texture = ExtResource("2_grqu1")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -404.0
+offset_top = -217.0
+offset_right = 403.0
+offset_bottom = 228.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 280.0
+offset_right = 627.0
+offset_bottom = 354.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="Start" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="Back" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="Exit" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 478.0
+offset_top = 228.0
+offset_right = 764.0
+offset_bottom = 300.0
+theme_override_font_sizes/font_size = 30
+text = "GAME OVER"
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

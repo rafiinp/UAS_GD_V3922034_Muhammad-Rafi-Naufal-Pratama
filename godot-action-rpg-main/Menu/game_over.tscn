@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt0h56v7nr3qv"]
+
+[ext_resource type="Script" path="res://game_over.gd" id="1_r631n"]
+[ext_resource type="Texture2D" uid="uid://d4lix5vb5xnci" path="res://Assets/bg.jpg" id="2_grqu1"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_r631n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578, 334.5)
+scale = Vector2(1.86262, 1.60329)
+texture = ExtResource("2_grqu1")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 807.0
+offset_bottom = 445.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 280.0
+offset_right = 627.0
+offset_bottom = 354.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="Start" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="Exit" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 164.0
+offset_right = 741.0
+offset_bottom = 236.0
+theme_override_font_sizes/font_size = 50
+text = "GAME OVER"
+
+[node name="HighScore" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 371.0
+offset_right = 791.0
+offset_bottom = 443.0
+theme_override_font_sizes/font_size = 50
+text = "Skor mu piro le"
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
